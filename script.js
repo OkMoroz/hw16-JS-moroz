@@ -1,7 +1,9 @@
+"use strict";
+
 function Human(name, gender) {
   this.name = name;
   this.gender = gender;
-};
+}
 
 function Flat() {
   this.humans = [];
@@ -37,7 +39,7 @@ flat1.addHuman(mom);
 flat2.addHuman(daughter);
 flat3.addHuman(son);
 
-const building = new Building("3");
+const building = new Building(3);
 
 building.addFlat(flat1);
 building.addFlat(flat2);
@@ -45,7 +47,8 @@ building.addFlat(flat3);
 
 building.flats.forEach(function (flat, index) {
   console.log(
-    `In our building in the flat № ${index + 1}: ${flat.humans.map(function (human) {
+    `In our building in the flat № ${index + 1}: ${flat.humans
+      .map(function (human) {
         return human.name;
       })
       .join(" and ")}`
